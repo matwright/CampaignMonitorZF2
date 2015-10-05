@@ -3,27 +3,19 @@ namespace Campaignmonitor\Transactional;
 
 use Campaignmonitor\Transactional\Exception\TransactionalInvalidArgument;
 use Campaignmonitor\Options\CampaignmonitorOptions;
+use Campaignmonitor\CampaignMonitorServiceInterface;
+use Campaignmonitor\CampaignMonitorServiceInterfaceTrait;
 
-
-class TransactionalService
+class TransactionalService implements CampaignMonitorServiceInterface
 {
-
-    private $options;
+    
+    use CampaignMonitorServiceInterfaceTrait;
 
     private $smartEmailObject;
 
     /**
      *
-     * @return ApplicationOptions $options
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     *
-     * @param ApplicationOptions $options            
+     * @param CampaignmonitorOptions $options            
      */
     public function __construct(CampaignmonitorOptions $options)
     {
@@ -35,7 +27,7 @@ class TransactionalService
      * @param string $emailId            
      * @return \CS_REST_Transactional_SmartEmail
      */
-    private function smartEmailObject($emailId)
+    public function smartEmailObject($emailId)
     {
         if ($this->smartEmailObject instanceof \CS_REST_Transactional_SmartEmail) {
             $this->smartEmailObject->set_smartemail_id($emailId);

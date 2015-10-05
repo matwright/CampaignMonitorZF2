@@ -3,7 +3,10 @@ return [
     'service_manager' => [
         'factories' => [
             'campaignmonitor_options' => 'Campaignmonitor\Options\Factory\CampaignmonitorOptionsFactory',
-            'campaignmonitor_transactional' => 'Campaignmonitor\Transactional\TransactionalServiceFactory'
+            'campaignmonitor_transactional' => 'Campaignmonitor\Transactional\TransactionalServiceFactory',
+            'campaignmonitor_subscribers' => 'Campaignmonitor\Transactional\SubscribersServiceFactory',
+            'campaignmonitor_lists' => 'Campaignmonitor\Lists\ListsServiceFactory'
+        
         ]
     ]
     ,
