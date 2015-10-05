@@ -1,0 +1,27 @@
+{
+  "name" : "matwright/campaign-monitor-zf2",
+  "description" : "ZF2 module for campaignmonitor/createsend-php",
+
+  "require" : {
+    "php" : ">=5.3.23",
+    "zendframework/zendframework" : ">=2.3.2,<2.4.0",
+    "campaignmonitor/createsend-php": "^4.1"
+
+  },
+  "require-dev" : {
+  },
+  "license" : "BSD-3-Clause",
+  "keywords" : [ "campaignmonitor","createsend-php" ],
+  "extra" : {
+    "branch-alias" : {
+		
+    }
+  },
+   "minimum-stability": "beta",
+  "type" : "library",
+  "support" : {
+    "email" : "mat@bstechnologies.com"
+  },
+  "config" : {
+  }
+}
