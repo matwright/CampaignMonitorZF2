@@ -23,5 +23,13 @@
     "email" : "mat@bstechnologies.com"
   },
   "config" : {
-  }
+  },
+      "autoload": {
+        "psr-0": {
+            "BsFile": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
 }
