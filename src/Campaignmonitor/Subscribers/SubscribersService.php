@@ -44,7 +44,7 @@ class SubscribersService implements CampaignMonitorServiceInterface
      */
     public function unsubscribe(SubscriberInterface $user, ListInterface $list)
     {
-        $response = $this->subscriberObject($list->getListId())->delete($user->getEmailAddress());
+        $response = $this->subscriberObject($list->getListId())->unsubscribe($user->getEmailAddress());
         return $response->was_successful();
     }
 
@@ -56,7 +56,12 @@ class SubscribersService implements CampaignMonitorServiceInterface
      */
     public function subscribe(SubscriberInterface $user, ListInterface $list)
     {
-        $response = $this->subscriberObject($list->getListId())->add($user->getEmailAddress());
+        $response = $this->subscriberObject($list->getListId())->add([
+            'EmailAddress'=>$user->getEmailAddress(),
+            'Name'=>$user->getFirstName().' '.$user->getLastName(),
+            'Resubscribe'=>true
+        ]);
+        
         return $response->was_successful();
     }
 }
