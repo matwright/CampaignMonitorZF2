@@ -4,7 +4,7 @@
 
   "require" : {
     "php" : ">=5.3.23",
-    "zendframework/zendframework" : ">=2.3.2,<2.4.0",
+    "zendframework/zendframework": "^2.5.3",
     "campaignmonitor/createsend-php": "^4.1"
 
   },
@@ -14,7 +14,7 @@
   "keywords" : [ "campaignmonitor","createsend-php" ],
   "extra" : {
     "branch-alias" : {
-		
+
     }
   },
    "minimum-stability": "beta",
